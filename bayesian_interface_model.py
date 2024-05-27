@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from collections import Counter
 from scipy.stats import beta
-
+import ssl
 #url = 'https://data.ny.gov/api/views/5xaw-6ayf/rows.csv?accessType=DOWNLOAD'
 
 #powerball
@@ -10,7 +10,7 @@ url = 'https://data.ny.gov/resource/d6yy-54nr.csv'
 
 # 1. Data Reading and Cleaning
 df = pd.read_csv(url)
-print(df.head())
+
 
 df['winning_numbers'] = df['winning_numbers'].str.split()
 
