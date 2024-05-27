@@ -25,7 +25,7 @@ class LottoDataFrame():
         #Powerball
         ball_cols = ['b1', 'b2', 'b3', 'b4', 'b5', 'pb']
         self.df[ball_cols] = self.df[ball_cols].astype(int)
-        print(self.df.head())
+        return self.df
         
 new_powerball = LottoDataFrame()
 
