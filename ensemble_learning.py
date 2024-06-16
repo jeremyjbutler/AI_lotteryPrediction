@@ -7,8 +7,8 @@ from collections import Counter
 from scipy.stats import beta
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
-from keras.models import Sequential
-from keras.layers import LSTM, Dense
+from keras import Sequential
+from tensorflow.python.keras.layers import LSTMV1, Dense
 
 import ssl
 

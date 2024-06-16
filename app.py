@@ -1,6 +1,7 @@
 import streamlit as st
 from dataframes import LottoDataFrame
 import pandas as pd
+import urllib3
 
 from load_css import local_css
 
@@ -22,17 +23,24 @@ def on_button_click():
     result_string = " "
     initstring="<div id=\"pball\">"
     #st.text(btext)
-    for value in powerballdata.values():
-        result_string += "<div id=\"pball\"> " + str(value) + "     </span>    "
+    for value in list(powerballdata.values())[0:6]:
+        result_string += initstring + str(value) + " </div> "
         #st.text(value)
-    st.markdown(f"{btext} {initstring} {result_string}", unsafe_allow_html=True)
+        powerballresult = list(powerballdata.values())[-1]
+    st.markdown(f"{initstring} {result_string} </span>", unsafe_allow_html=True)
+   
     #"Baysian Model", result_string
     #st.text(res)
 
-
+def on_update_click():
+    #download results
+    pass
+    
 # Create the button
 if st.button("Get Numbers"):
     on_button_click()
+if st.button("Update Past Results"):
+    on_update_click()
     
 #final_table = st.table(dfchart)
 #final_table.add_rows(powerballdata)
